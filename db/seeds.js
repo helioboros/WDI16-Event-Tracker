@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const Events = require("../models/Events")
+const Event = require("../models/Event")
 const People = require("../models/People")
 const User = require("../models/User")
 
@@ -11,11 +11,11 @@ mongoose.connect("mongodb://localhost/event-tracker")
         console.log("ERROR", err)
     })
 
-Events.remove()
+Event.remove()
 People.remove()
 User.remove()
 
-// .then - add all this template shit
+// .then - add all this template shit for
 // .then(() => {
 //     mongoose.connection.close()
 // })

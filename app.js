@@ -11,6 +11,8 @@ mongoose.connect(process.env.MONGODB_URI)
 var indexRouter = require('./routes/index');
 // Commented out code has their files under WIP.
 // var userController = require('./routes/userController');
+// var eventController = require('./routes/eventController');
+// var peopleController = require('./routes/peopleController');
 
 var app = express();
 
