@@ -1,3 +1,4 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -5,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require("method-override")
 const mongoose = require("mongoose")
+mongoose.connect(process.env.MONGODB_URI)
 
 var indexRouter = require('./routes/index');
 // Commented out code has their files under WIP.
