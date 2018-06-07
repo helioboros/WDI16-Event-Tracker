@@ -9,10 +9,10 @@ const mongoose = require("mongoose")
 mongoose.connect(process.env.MONGODB_URI)
 
 var indexRouter = require('./routes/index');
-// Commented out code has their files under WIP.
-// var userController = require('./routes/userController');
-// var eventController = require('./routes/eventController');
-// var peopleController = require('./routes/peopleController');
+
+var userController = require('./routes/userController');
+var eventController = require('./routes/eventController');
+var peopleController = require('./routes/peopleController');
 
 var app = express();
 
@@ -37,10 +37,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-// app.use('/users', userController);
+app.use('/users', userController);
 
-// app.use("/people", peopleController)
-// app.use("/people/:peopleId/dates", dateController)
+app.use("/people", peopleController)
+app.use("/people/:peopleId/events", eventController)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
