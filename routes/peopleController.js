@@ -5,7 +5,7 @@ const People = require("../models/People")
 
 //GET person listing
 router.get('/', function (req, res, next) {
-    User.findById(req.params.UserId)
+    User.findById(req.params.userId)
         .then((user) => {
             const people = user.people
             res.render("people/index", {

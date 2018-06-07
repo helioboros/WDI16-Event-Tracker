@@ -1,6 +1,6 @@
 <h1>edit {{event.title}}</h1>
 
-<form action="/users/{{userId}}/events" method="POST">
+<form action="/users/{{userId}}/events/{{eventId}}?_method=PUT" method="POST">
     <div>
         <label for="title">Event</label>
         <input type="text" name="title" value={{event.title}}>

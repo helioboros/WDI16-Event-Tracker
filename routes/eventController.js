@@ -5,7 +5,7 @@ const Event = require("../models/Event")
 
 //GET event listing
 router.get('/', function (req, res, next) {
-    User.findById(req.params.UserId)
+    User.findById(req.params.userId)
         .then((user) => {
             const events = user.events
             res.render("events/index", {
