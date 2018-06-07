@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router({mergeParams: true})
-// const, fuckin, idk, people = require ../models/People
+const User = require("../models/User")
 
-//GET event listing
+//GET user listing
 router.get("/", (req, res) => {
 
 })
