@@ -1,0 +1,10 @@
+<h1>{{event.title}}</h1>
+<h3>{{event.date}}</h3>
+<p>{{event.with}}</p>
+<p>{{event.address}}</p>
+<p>{{event.miscellaneous}}</p>
+<p>{{event.ready}}</p>
+
+<form action="/events/{{event._id}}?_method=DELETE" method="POST">
+    <button type="submit">delete event</button>
+</form>

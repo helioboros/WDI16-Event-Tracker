@@ -1,0 +1,29 @@
+<h1>New Event</h1>
+
+<form action="/users/{{userId}}/events" method="POST">
+    <div>
+        <label for="title">Event</label>
+        <input type="text" name="title" placeholder="Event title">
+    </div>
+    <div>
+        <label for="date">Date</label>
+        <input type="date" name="date">
+    </div>
+    <div>
+        <label for="with">with:</label>
+        <input type="text" name="with" placeholder="john doe">
+    </div>
+    <div>
+        <label for="address">address:</label>
+        <input type="text" name="address" placeholder="420 weed street">
+    </div>
+    <div>
+        <label for="miscellaneous">misc</label>
+        <textarea type="text" name="miscellaneous" placeholder="misc"></textarea>
+    </div>
+    <div>
+        <label for="ready">ready?</label>
+        <input type="text" name="ready" placeholder="false">
+    </div>
+    <button type="submit">save comment</button>
+</form>
