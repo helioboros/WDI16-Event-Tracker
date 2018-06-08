@@ -17,13 +17,13 @@ router.get('/', function (req, res, next) {
 //NEW route
 router.get("/new", (req, res) => {
     res.render("/people/new", {
-        UserId = req.params.UserId
+        userId: req.params.id
     })
 })
 //CREATE route
 router.get("/", (req, res) => {
     const person = new People(req.body)
-    User.findById(req.params.UserId)
+    User.findById(req.params.userId)
         .then((user) => {
             user.people.push(person)
             return user.save()

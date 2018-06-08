@@ -39,8 +39,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', userController);
 
-app.use("/people", peopleController)
-app.use("/people/:peopleId/events", eventController)
+app.use("/users/:userId/people", peopleController)
+app.use("/users/:userId/events", eventController)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

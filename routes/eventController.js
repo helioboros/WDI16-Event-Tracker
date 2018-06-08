@@ -17,13 +17,13 @@ router.get('/', function (req, res, next) {
 //NEW route
 router.get("/new", (req, res) => {
     res.render("/events/new", {
-        UserId = req.params.UserId
+        userId: req.params.id
     })
 })
 //CREATE route
 router.get("/", (req, res) => {
     const event = new Event(req.body)
-    User.findById(req.params.UserId)
+    User.findById(req.params.userId)
         .then((user) => {
             user.events.push(event)
             return user.save()
