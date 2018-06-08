@@ -53,15 +53,15 @@ User.remove()
         username: "horgus",
         password: "creamyman",
         name: "Jason",
-        circle: [peopleSchema],
-        plans: [eventSchema]
+        circle: [person1, person2],
+        plans: [event1, event2]
     })
     const user2 = new User({
         username: "mumbo",
         password: "thisismypassword",
         name: "Lisette",
-        circle: [peopleSchema],
-        plans: [eventSchema]
+        circle: [person1, person2],
+        plans: [event1, event2]
     })
     const Users = [user1, user2]
     return User.insertMany(Users)

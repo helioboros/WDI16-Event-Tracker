@@ -41,6 +41,11 @@ app.use('/users', userController);
 app.use("/users/:userId/people", peopleController)
 app.use("/users/:userId/events", eventController)
 
+// listener
+app.listen(3000, function(req, res){
+	console.log("listening");
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
