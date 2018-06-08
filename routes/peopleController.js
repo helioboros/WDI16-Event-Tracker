@@ -45,21 +45,21 @@ router.get("/:id", (req, res) => {
 router.get("/:id/edit", (req, res) => {
     People.findById(req.params.id)
         .then((person) => {
-            res.render(`/user/${req.params.userId}/people/edit`, { person })
+            res.render(`/users/${req.params.userId}/people/edit`, { person })
         })
 })
 //UPDATE route
 router.put("/:id", (req, res) => {
     People.findByIdAndUpdate(req.params.id, req.body, { new: true })
         .then(() => {
-            res.redirect(`/user/${req.params.userId}/people/${req.params.id}`)
+            res.redirect(`/users/${req.params.userId}/people/${req.params.id}`)
         })
 })
 //DELETE route
 router.delete("/:id", (req, res) => {
     People.findByIdAndRemove(req.params.id)
         .then(() => {
-            res.redirect(`/user/${req.params.userId}/people`)
+            res.redirect(`/users/${req.params.userId}/people`)
         })
 })
 
