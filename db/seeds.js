@@ -12,7 +12,9 @@ mongoose.connect("mongodb://localhost/event-tracker")
     })
 
 Event.remove()
+.then (() =>
 People.remove()
+.then (() => 
 User.remove()
 .then(() => {
     const person1 = new People({
@@ -63,7 +65,7 @@ User.remove()
     })
     const Users = [user1, user2]
     return User.insertMany(Users)
-})
+})))
 .then(() => {
     mongoose.connection.close()
 })
