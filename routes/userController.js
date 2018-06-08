@@ -6,6 +6,7 @@ const User = require("../models/User")
 router.get('/', function (req, res, next) {
     User.find()
         .then((users) => {
+            console.log(users)
             res.render("../views/users/index", {
                 users
             })
