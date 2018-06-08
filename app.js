@@ -38,7 +38,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', userController);
-
 app.use("/users/:userId/people", peopleController)
 app.use("/users/:userId/events", eventController)
 

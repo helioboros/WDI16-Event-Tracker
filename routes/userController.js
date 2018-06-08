@@ -6,7 +6,7 @@ const User = require("../models/User")
 router.get('/', function (req, res, next) {
     User.find()
         .then((users) => {
-            res.render("users/index", {
+            res.render("/users/index", {
                 users
             })
         })
@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
 
 //NEW route
 router.get("/new", (req, res) => {
-    res.render("users/new")
+    res.render("/users/new")
 })
 
 //CREATE route
