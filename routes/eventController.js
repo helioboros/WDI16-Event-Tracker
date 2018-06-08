@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
     User.findById(req.params.userId)
         .then((user) => {
             const events = user.events
-            res.render("events/index", {
+            res.render("../views/events/index", {
                 events
             })
         })
@@ -16,7 +16,7 @@ router.get('/', function (req, res, next) {
 
 //NEW route
 router.get("/new", (req, res) => {
-    res.render("/events/new", {
+    res.render("../views/events/new", {
         userId: req.params.id
     })
 })
@@ -36,7 +36,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     Event.findById(req.params.id)
         .then((event) => {
-            res.render("events/show", {
+            res.render("../views/events/show", {
                 event
             })
         })

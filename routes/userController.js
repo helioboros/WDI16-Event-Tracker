@@ -6,7 +6,7 @@ const User = require("../models/User")
 router.get('/', function (req, res, next) {
     User.find()
         .then((users) => {
-            res.render("/users/index", {
+            res.render("../views/users/index", {
                 users
             })
         })
@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
 
 //NEW route
 router.get("/new", (req, res) => {
-    res.render("/users/new")
+    res.render("../views/users/new")
 })
 
 //CREATE route
@@ -30,7 +30,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     User.findById(req.params.id)
         .then((user) => {
-            res.render("users/show", {
+            res.render("../views/users/show", {
                 user
             })
         })
@@ -40,7 +40,7 @@ router.get("/:id", (req, res) => {
 router.get("/:id/edit", (req, res) => {
     User.findById(req.params.id)
         .then((user) => {
-            res.render("users/edit", { user })
+            res.render("../views/users/edit", { user })
         })
 })
 

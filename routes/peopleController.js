@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
     User.findById(req.params.userId)
         .then((user) => {
             const people = user.people
-            res.render("people/index", {
+            res.render("../views/people/index", {
                 people
             })
         })
@@ -16,7 +16,7 @@ router.get('/', function (req, res, next) {
 
 //NEW route
 router.get("/new", (req, res) => {
-    res.render("/people/new", {
+    res.render("../views/people/new", {
         userId: req.params.id
     })
 })
@@ -36,7 +36,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     People.findById(req.params.id)
         .then((person) => {
-            res.render("people/show", {
+            res.render("../views/people/show", {
                 person
             })
         })
