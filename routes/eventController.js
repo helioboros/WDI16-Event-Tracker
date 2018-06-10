@@ -9,7 +9,8 @@ router.get('/', function (req, res, next) {
         .then((user) => {
             const events = user.events
             res.render("../views/events/index", {
-                events
+                user,
+                events,
             })
         })
 });

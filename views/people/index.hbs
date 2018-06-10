@@ -1,8 +1,15 @@
 <ul>
     {{#each people}}
     <li>
-        <p>{{name}}</p>
-        <p>{{relationship}}</p>
-        <p>{{importantDates}}</p>
+        <div class="person">
+            <span class="personInfo">
+                <p>{{people.name}}</p>
+                <p>{{people.age}}</p>
+                <p>{{people.relationship}}</p>
+            </span>
+            <p><a href="/users/{{user._id}}/people/{{person._id}}">full bio</a></p>
+        </div>
     </li>
+    {{/each}}
+    <p><a href="/users/{{user._id}}/people/new">add a person</a></p>
 </ul>

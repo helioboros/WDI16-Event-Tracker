@@ -9,7 +9,8 @@ router.get('/', function (req, res, next) {
         .then((user) => {
             const people = user.people
             res.render("../views/people/index", {
-                people
+                user,
+                people,
             })
         })
 });
@@ -21,10 +22,11 @@ router.get("/new", (req, res) => {
     })
 })
 //CREATE route
-router.get("/", (req, res) => {
+router.post("/", (req, res) => {
     const person = new People(req.body)
     User.findById(req.params.userId)
         .then((user) => {
+            console.log("pushed baby!!!")
             user.people.push(person)
             return user.save()
         })
