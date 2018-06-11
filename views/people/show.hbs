@@ -1,21 +1,20 @@
-<div class="whole_person">
+<div class="wholebox">
     <h1>{{person.name}}</h1>
-    <div class="person">
+    <div class="smallerbox">
         <p>Age: {{person.age}}</p>
         <p>Relationship: {{person.relationship}}</p>
         <p>Address: {{person.address}}</p>
     </div>
-    <ul class="dates_list lists">
+    <ul class="dates_list lists smallerbox">
         {{#each person.importantDates}}
         <li>{{this}}</li>
         {{/each}}
     </ul>
-    <ul class="likes_list lists">
+    <ul class="likes_list lists smallerbox">
         {{#each person.favoriteThings}}
         <li>{{this}}</li>
         {{/each}}
     </ul>
     <p>Tidbits: {{person.miscellaneous}}</p>
+    <a href="{{person._id}}/edit">edit this banch</a>
 </div>
-
-<a href="{{person._id}}/edit">edit this banch</a>

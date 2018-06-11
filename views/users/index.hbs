@@ -1,12 +1,16 @@
-<h1>OH YEAH BABEY BAG OF WORMS!!!!!</h1>
-
-<ul>
-    {{#each users}}
-    <div class="userbox">
-        <h3>{{name}}</h3>
-        <a href="/users/{{id}}">
-            <p>{{username}}</p>
-        </a>
-    </div>
-    {{/each}}
-</ul>
+<div class="wholebox">
+    <h1>Users</h1>
+    <ul>
+        {{#each users}}
+        <div class="smallerbox">
+            <h3>{{name}}</h3>
+            <a href="/users/{{id}}">
+                <p>{{username}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </ul>
+    <p>
+        <a href="users/new">Add User</a>
+    </p>
+</div>

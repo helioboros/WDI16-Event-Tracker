@@ -1,0 +1,23 @@
+<div class="wholebox">
+    <h1>edit {{user.username}}</h1>
+    <div class="smallerbox">
+        <form action="/users/{{userId}}?_method=PUT" method="POST">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" value={{person.username}}>
+            </div>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" value={{person.name}}>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="text" name="password" value={{person.password}}>
+            </div>
+            <button type="submit">save</button>
+        </form>
+    </div>
+    <p>
+        <a href="/users/{{userId}}">back</a>
+    </p>
+</div>

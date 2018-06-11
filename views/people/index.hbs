@@ -1,7 +1,7 @@
-<ul>
+<div class="wholebox">
     {{#each people}}
     <li>
-        <iv class="person">
+        <div class="smallerbox">
             <span class="personInfo">
                 <p>Name: {{name}}</p>
                 <p>Age: {{age}}</p>
@@ -13,10 +13,11 @@
                     <button type="submit">delete this person</button>
                 </form>
             </p>
-            </div>
+        </div>
     </li>
     {{/each}}
     <p>
         <a href="/users/{{user._id}}/people/new">add a person</a>
     </p>
-</ul>
+    </ul>
+</div>

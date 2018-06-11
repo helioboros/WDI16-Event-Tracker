@@ -1,9 +1,16 @@
-<h1>{{user.username}}</h1>
-<p>Display name: {{user.name}}</p>
-<p>Password: {{user.password}}</p>
-<p><a href="/users/{{user._id}}/people/">Circle</a></p>
-<p><a href="/users/{{user._id}}/events">Plans</a></p>
-
-<form action="/users/{{user._id}}?_method=DELETE" method="POST">
-    <button type="submit">delete user</button>
-</form>
+<div class="wholebox">
+    <h1>{{user.username}}</h1>
+    <div class="smallerbox">
+        <p>Display name: {{user.name}}</p>
+        <p>
+            <a href="/users/{{user._id}}/people">Circle</a>
+        </p>
+        <p>
+            <a href="/users/{{user._id}}/events">Plans</a>
+        </p>
+    </div>
+    <a href="/users/{{user._id}}/edit">Edit User</a>
+    <form action="/users/{{user._id}}?_method=DELETE" method="POST">
+        <button type="submit">delete user</button>
+    </form>
+</div>
