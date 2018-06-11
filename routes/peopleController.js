@@ -48,8 +48,6 @@ router.get("/:id/edit", (req, res) => {
     User.findById(req.params.userId)
     .then((user) => {
         const person = user.people.id(req.params.id)
-        console.log(user)
-        console.log(person)
         res.render("../views/people/edit", {
             userId: req.params.userId,
             person
@@ -85,6 +83,5 @@ router.delete("/:id", (req, res) => {
             res.redirect(`/users/${req.params.userId}/people/`)
         })
 })
-
 
 module.exports = router;

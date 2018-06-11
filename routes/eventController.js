@@ -18,7 +18,7 @@ router.get('/', function (req, res, next) {
 //NEW route
 router.get("/new", (req, res) => {
     res.render("../views/events/new", {
-        userId: req.params.id
+        userId: req.params.userId
     })
 })
 //CREATE route
@@ -44,25 +44,42 @@ router.get("/:id", (req, res) => {
 })
 //EDIT route
 router.get("/:id/edit", (req, res) => {
-    Event.findById(req.params.id)
-        .then((event) => {
-            res.render(`/users/${req.params.userId}/events/edit`, { event })
+    User.findById(req.params.userId)
+        .then((user) => {
+            const event = user.events.id(req.params.id)
+            res.render("../views/events/edit", {
+                userId: req.params.userId,
+                event
+            })
         })
 })
 //UPDATE route
 router.put("/:id", (req, res) => {
-    Event.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    User.findById(req.params.userId)
+        .then((user) => {
+            let event = user.events.id(req.params.id)
+            event.title = req.body.title
+            event.date = req.body.date
+            event.with = req.body.with
+            event.address = req.body.address
+            event.miscellaneous = req.body.miscellaneous
+            event.ready = req.body.ready
+            return user.save()
+        })
         .then(() => {
             res.redirect(`/users/${req.params.userId}/events/${req.params.id}`)
         })
 })
 //DELETE route
 router.delete("/:id", (req, res) => {
-    Event.findByIdAndRemove(req.params.id)
+    User.findById(req.params.userId)
+        .then((user) => {
+            user.events.id(req.params.id).remove()
+            return user.save()
+        })
         .then(() => {
-            res.redirect(`/users/${req.params.userId}/events`)
+            res.redirect(`/users/${req.params.userId}/events/`)
         })
 })
-
 
 module.exports = router;
