@@ -3,11 +3,13 @@
     <li>
         <div class="person">
             <span class="personInfo">
-                <p>{{people.name}}</p>
-                <p>{{people.age}}</p>
-                <p>{{people.relationship}}</p>
+                <p>Name: {{name}}</p>
+                <p>Age: {{age}}</p>
+                <p>Relationship: {{relationship}}</p>
             </span>
-            <p><a href="/users/{{user._id}}/people/{{person._id}}">full bio</a></p>
+            <a href="/users/{{../user._id}}/people/{{id}}">Full Bio</a>
+            <p><form method="POST" action="/people/{{@index}}?_method=DELETE">
+    <button type="submit">delete this person</button></p>
         </div>
     </li>
     {{/each}}

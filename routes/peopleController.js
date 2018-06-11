@@ -7,7 +7,8 @@ const People = require("../models/People")
 router.get('/', function (req, res, next) {
     User.findById(req.params.userId)
         .then((user) => {
-            const people = user.people
+            const people = user.circle
+            console.log(people)
             res.render("../views/people/index", {
                 user,
                 people,
@@ -18,7 +19,7 @@ router.get('/', function (req, res, next) {
 //NEW route
 router.get("/new", (req, res) => {
     res.render("../views/people/new", {
-        userId: req.params.id
+        userId: req.params.userId
     })
 })
 //CREATE route
@@ -26,8 +27,7 @@ router.post("/", (req, res) => {
     const person = new People(req.body)
     User.findById(req.params.userId)
         .then((user) => {
-            console.log("pushed baby!!!")
-            user.people.push(person)
+            user.circle.push(person)
             return user.save()
         })
         .then(() => {
@@ -47,7 +47,7 @@ router.get("/:id", (req, res) => {
 router.get("/:id/edit", (req, res) => {
     People.findById(req.params.id)
         .then((person) => {
-            res.render(`/users/${req.params.userId}/people/edit`, { person })
+            res.render(`people/edit`, { person })
         })
 })
 //UPDATE route
