@@ -37,8 +37,7 @@ router.post("/", (req, res) => {
 router.get("/:id", (req, res) => {
     User.findById(req.params.userId)
         .then((user) => {
-            console.log(user)
-           const person = user.people.id(req.params.id)
+            const person = user.people.id(req.params.id)
             res.render("../views/people/show", {
                 person
             })
@@ -46,23 +45,34 @@ router.get("/:id", (req, res) => {
 })
 //EDIT route
 router.get("/:id/edit", (req, res) => {
-    People.findById(req.params.id)
-        .then((person) => {
-            res.render(`people/edit`, { person })
+    User.findById(req.params.userId)
+    .then((user) => {
+        const person = user.people.id(req.params.id)
+        res.render("../views/people/edit", {
+            person
         })
+    })
 })
 //UPDATE route
 router.put("/:id", (req, res) => {
-    People.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    User.findById(req.params.userId)
+        .then((user) => {
+            user.people.id(req.params.id).update()
+            return user.save()
+        })
         .then(() => {
             res.redirect(`/users/${req.params.userId}/people/${req.params.id}`)
         })
 })
 //DELETE route
 router.delete("/:id", (req, res) => {
-    People.findByIdAndRemove(req.params.id)
+    User.findById(req.params.userId)
+        .then((user) => {
+            user.people.id(req.params.id).remove()
+            return user.save()
+        })
         .then(() => {
-            res.redirect(`/users/${req.params.userId}/people`)
+            res.redirect(`/users/${req.params.userId}/people/`)
         })
 })
 

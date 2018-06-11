@@ -9,7 +9,7 @@
             </span>
             <a href="/users/{{../user._id}}/people/{{id}}">Full Bio</a>
             <p>
-                <form method="POST" action="/people/{{id}}?_method=DELETE">
+                <form method="POST" action="/users/{{../user._id}}/people/{{id}}?_method=DELETE">
                     <button type="submit">delete this person</button>
                 </form>
             </p>
