@@ -48,7 +48,10 @@ router.get("/:id/edit", (req, res) => {
     User.findById(req.params.userId)
     .then((user) => {
         const person = user.people.id(req.params.id)
+        console.log(user)
+        console.log(person)
         res.render("../views/people/edit", {
+            userId: req.params.userId,
             person
         })
     })
@@ -57,7 +60,14 @@ router.get("/:id/edit", (req, res) => {
 router.put("/:id", (req, res) => {
     User.findById(req.params.userId)
         .then((user) => {
-            user.people.id(req.params.id).update()
+            let person = user.people.id(req.params.id)
+            person.name = req.body.name
+            person.age = req.body.age
+            person.relationship = req.body.relationship
+            person.address = req.body.address
+            person.importantDates = req.body.importantDates
+            person.miscellaneous = req.body.miscellaneous
+            person.favoriteThings = req.body.favoriteThings
             return user.save()
         })
         .then(() => {

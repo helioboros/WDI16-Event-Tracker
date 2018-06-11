@@ -1,4 +1,21 @@
-<h1>{{person.name}}</h1>
-<p>Age: {{person.age}}</p>
+<div class="whole_person">
+    <h1>{{person.name}}</h1>
+    <div class="person">
+        <p>Age: {{person.age}}</p>
+        <p>Relationship: {{person.relationship}}</p>
+        <p>Address: {{person.address}}</p>
+    </div>
+    <ul class="dates_list lists">
+        {{#each person.importantDates}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <ul class="likes_list lists">
+        {{#each person.favoriteThings}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <p>Tidbits: {{person.miscellaneous}}</p>
+</div>
 
 <a href="{{person._id}}/edit">edit this banch</a>
