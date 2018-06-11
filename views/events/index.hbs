@@ -1,8 +1,12 @@
 {{#each events}}
 <h1>{{title}}</h1>
-<p>{{date}}</p>
-<p>{{with}}</p>
-<p>{{address}}</p>
-<p>{{miscellaneous}}</p>
 <p>Ready? {{ready}}</p>
+<p>
+    <form method="POST" action="/users/{{../user._id}}/events/{{id}}?_method=DELETE">
+        <button type="submit">delete this event</button>
+    </form>
+</p>
 {{/each}}
+<p>
+    <a href="/users/{{user._id}}/events/new">add an event</a>
+</p>

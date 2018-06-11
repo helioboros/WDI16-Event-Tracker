@@ -6,8 +6,8 @@ const userSchema = new Schema({
     username: String,
     password: String,
     name: String,
-    circle: [peopleSchema],
-    plans: [eventSchema]
+    people: [peopleSchema],
+    events: [eventSchema]
 })
 
 module.exports = userSchema

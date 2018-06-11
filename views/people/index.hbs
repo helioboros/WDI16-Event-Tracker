@@ -1,17 +1,22 @@
 <ul>
     {{#each people}}
     <li>
-        <div class="person">
+        <iv class="person">
             <span class="personInfo">
                 <p>Name: {{name}}</p>
                 <p>Age: {{age}}</p>
                 <p>Relationship: {{relationship}}</p>
             </span>
             <a href="/users/{{../user._id}}/people/{{id}}">Full Bio</a>
-            <p><form method="POST" action="/people/{{@index}}?_method=DELETE">
-    <button type="submit">delete this person</button></p>
-        </div>
+            <p>
+                <form method="POST" action="/people/{{id}}?_method=DELETE">
+                    <button type="submit">delete this person</button>
+                </form>
+            </p>
+            </div>
     </li>
     {{/each}}
-    <p><a href="/users/{{user._id}}/people/new">add a person</a></p>
+    <p>
+        <a href="/users/{{user._id}}/people/new">add a person</a>
+    </p>
 </ul>

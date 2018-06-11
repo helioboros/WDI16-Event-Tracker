@@ -7,8 +7,7 @@ const People = require("../models/People")
 router.get('/', function (req, res, next) {
     User.findById(req.params.userId)
         .then((user) => {
-            const people = user.circle
-            console.log(people)
+            const people = user.people
             res.render("../views/people/index", {
                 user,
                 people,
@@ -27,7 +26,7 @@ router.post("/", (req, res) => {
     const person = new People(req.body)
     User.findById(req.params.userId)
         .then((user) => {
-            user.circle.push(person)
+            user.people.push(person)
             return user.save()
         })
         .then(() => {
@@ -36,8 +35,10 @@ router.post("/", (req, res) => {
 })
 //SHOW route
 router.get("/:id", (req, res) => {
-    People.findById(req.params.id)
-        .then((person) => {
+    User.findById(req.params.userId)
+        .then((user) => {
+            console.log(user)
+           const person = user.people.id(req.params.id)
             res.render("../views/people/show", {
                 person
             })
