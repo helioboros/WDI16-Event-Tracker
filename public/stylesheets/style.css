@@ -46,3 +46,13 @@ main {
   background: #4171ca;
   color: #FFFFFF;
 }
+
+@media (max-width: 600px){
+  .aside {
+    display: none;
+  }
+  .wholebox {
+    margin: 0 auto;
+    width: 95vw;
+  }
+}
