@@ -35,3 +35,14 @@ main {
 .smallerbox {
   text-align: center;
 }
+.personInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+  margin: 1vw;
+  padding: 1vw;
+  border-radius: 5px;
+  background: #4171ca;
+  color: #FFFFFF;
+}
