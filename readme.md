@@ -15,3 +15,5 @@ github: https://github.com/helioboros/WDI16-Event-Tracker
 ***
 
 In future versions of this app, I would like to add actual login functionality.
+
+When I started, I focused on keeping names distinct so that I would remember what I was referring back to, but it quickly became messy and mucky as I kept referring to the wrong things. After some trial and error, I standardized names and revamped my code. At first, I just put a quick template for everything and then went through and tested and cleaned things up - and I feel like I've got a decent enough grasp on this, but it's still rather tedious to work with.
