@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
     const user = req.body
     User.create(user)
         .then(() => {
-            res.redirect("/users")
+            res.redirect("/")
         })
 })
 

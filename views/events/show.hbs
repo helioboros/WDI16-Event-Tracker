@@ -1,13 +1,11 @@
 <div class="wholebox">
     <div class="smallerbox">
         <h1>{{event.title}}</h1>
-        <h3>{{event.date}}</h3>
-        <p>{{event.with}}</p>
-        <p>{{event.address}}</p>
-        <p>{{event.miscellaneous}}</p>
-        <p>{{event.ready}}</p>
+        <h3>Date: {{event.date}}</h3>
+        <p>With? {{event.with}}</p>
+        <p>Address: {{event.address}}</p>
+        <p>Tidbits: {{event.miscellaneous}}</p>
+        <p>Ready? {{event.ready}}</p>
     </div>
-    <form action="/events/{{event._id}}?_method=DELETE" method="POST">
-        <button type="submit">delete event</button>
-    </form>
+    <a href="{{event._id}}/edit">Edit Event</a>
 </div>

@@ -2,6 +2,7 @@
     {{#each events}}
     <div class="smallerbox">
         <h1>{{title}}</h1>
+        <p><a href="/users/{{../user._id}}/events/{{id}}">More</a></p>
         <p>Ready? {{ready}}</p>
         <p>
             <form method="POST" action="/users/{{../user._id}}/events/{{id}}?_method=DELETE">

@@ -35,8 +35,9 @@ router.get("/", (req, res) => {
 })
 //SHOW route
 router.get("/:id", (req, res) => {
-    Event.findById(req.params.id)
-        .then((event) => {
+    User.findById(req.params.userId)
+        .then((user) => {
+            const event = user.events.id(req.params.id)
             res.render("../views/events/show", {
                 event
             })
