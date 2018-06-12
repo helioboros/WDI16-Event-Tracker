@@ -1,33 +1,36 @@
-<h1>New Person</h1>
-
-<form action="/users/{{userId}}/people" method="POST">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" placeholder="name">
+<div class="wholebox">
+    <h1>New Person</h1>
+    <div class="smallerbox">
+        <form action="/users/{{userId}}/people" method="POST">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="name">
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" name="age" placeholder="500">
+            </div>
+            <div>
+                <label for="relationship">Relationship</label>
+                <input type="text" name="relationship" placeholder="mom is that you">
+            </div>
+            <div>
+                <label for="address">Address</label>
+                <input type="text" name="address" placeholder="address">
+            </div>
+            <div>
+                <label for="importantDates">important dates</label>
+                <textarea type="text" name="importantDates" placeholder="important dates"></textarea>
+            </div>
+            <div>
+                <label for="miscellaneous">misc</label>
+                <textarea type="text" name="miscellaneous" placeholder="other details"></textarea>
+            </div>
+            <div>
+                <label for="favoriteThings">Favorite Things</label>
+                <textarea type="text" name="favoriteThings" placeholder="stuff they like"></textarea>
+            </div>
+            <button type="submit">save</button>
+        </form>
     </div>
-    <div>
-        <label for="age">Age</label>
-        <input type="number" name="age" placeholder="500">
-    </div>
-    <div>
-        <label for="relationship">Relationship</label>
-        <input type="text" name="relationship" placeholder="mom is that you">
-    </div>
-    <div>
-        <label for="address">Address</label>
-        <input type="text" name="address" placeholder="address">
-    </div>
-    <div>
-        <label for="importantDates">important dates</label>
-        <textarea type="text" name="importantDates" placeholder="important dates"></textarea>
-    </div>
-    <div>
-        <label for="miscellaneous">misc</label>
-        <textarea type="text" name="miscellaneous" placeholder="other details"></textarea>
-    </div>
-    <div>
-        <label for="favoriteThings">Favorite Things</label>
-        <textarea type="text" name="favoriteThings" placeholder="stuff they like"></textarea>
-    </div>
-    <button type="submit">save</button>
-</form>
+</div>
