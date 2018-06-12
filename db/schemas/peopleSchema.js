@@ -5,9 +5,9 @@ const peopleSchema = new Schema({
     age: Number,
     relationship: String,
     address: String,
-    importantDates: [],
+    importantDates: String,
     miscellaneous: String,
-    favoriteThings: []
+    favoriteThings: String,
 })
 
 module.exports = peopleSchema

@@ -22,18 +22,18 @@ User.remove()
         age: 25,
         relationship: "coworker",
         address: "300 MyAddress Circle",
-        importantDates: ["March 20 - Birthday", "November 4 - Anniversary"],
+        importantDates: "March 20 - Birthday, November 4 - Anniversary",
         miscellaneous: "Favorite coworker By Far",
-        favoriteThings: ["Beanie babies", "collectable stamps"]
+        favoriteThings: "Beanie babies, collectable stamps"
     })
     const person2 = new People({
         name: "Steven",
         age: 42,
         relationship: "uncle",
         address: "2109 Northern Road",
-        importantDates: ["September 2 - Birthday", "December 3 - Anniversary"],
+        importantDates: "September 2 - Birthday, December 3 - Anniversary",
         miscellaneous: "the bigboys are back in town",
-        favoriteThings: ["Action figures", "Marvel movies", "Pina coladas"]
+        favoriteThings: "Action figures, Marvel movies, Pina coladas"
     })
     const event1 = new Event({
         title: "Tasha's Baby Shower",

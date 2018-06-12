@@ -19,11 +19,11 @@ router.get("/new", (req, res) => {
 })
 
 //CREATE route
-router.get("/", (req, res) => {
+router.post("/", (req, res) => {
     const user = req.body
     User.create(user)
         .then(() => {
-            res.redirect("/")
+            res.redirect("/users")
         })
 })
 

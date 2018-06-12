@@ -4,17 +4,9 @@
         <p>Age: {{person.age}}</p>
         <p>Relationship: {{person.relationship}}</p>
         <p>Address: {{person.address}}</p>
+        <p>Important Dates: {{person.importantDates}}</p>
+        <p>Favorite Things: {{person.favoriteThings}}</p>
+        <p>Tidbits: {{person.miscellaneous}}</p>
     </div>
-    <ul class="dates_list lists smallerbox">
-        {{#each person.importantDates}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    <ul class="likes_list lists smallerbox">
-        {{#each person.favoriteThings}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    <p>Tidbits: {{person.miscellaneous}}</p>
     <a href="{{person._id}}/edit">edit this banch</a>
 </div>

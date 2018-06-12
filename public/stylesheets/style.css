@@ -2,7 +2,36 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
-  color: #00B7FF;
+  color: #FFFFFF;
+}
+main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row-reverse;
+  align-items: space-between;
+}
+.aside, .wholebox {
+  display: flex;
+  flex-direction: column;
+  margin: 1vw;
+  padding: 1vw;
+  border-radius: 15px;
+}
+.aside {
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #3566c0;
+}
+.wholebox {
+  align-items: space-evenly;
+  justify-content: space-evenly;
+  text-align: center;
+  background: #6895e7;
+  color: #435885;
+  margin: 0 auto;
+  width: 70vw;
+}
+.smallerbox {
+  text-align: center;
 }
