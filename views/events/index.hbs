@@ -1,12 +1,16 @@
-{{#each events}}
-<h1>{{title}}</h1>
-<p>Ready? {{ready}}</p>
-<p>
-    <form method="POST" action="/users/{{../user._id}}/events/{{id}}?_method=DELETE">
-        <button type="submit">delete this event</button>
-    </form>
-</p>
-{{/each}}
-<p>
-    <a href="/users/{{user._id}}/events/new">add an event</a>
-</p>
+<div class="wholebox">
+    {{#each events}}
+    <div class="smallerbox">
+        <h1>{{title}}</h1>
+        <p>Ready? {{ready}}</p>
+        <p>
+            <form method="POST" action="/users/{{../user._id}}/events/{{id}}?_method=DELETE">
+                <button type="submit">delete this event</button>
+            </form>
+        </p>
+    </div>
+    {{/each}}
+    <p>
+        <a href="/users/{{user._id}}/events/new">add an event</a>
+    </p>
+</div>
